@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OT CSM Buddy</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== Mobile header (only visible on small screens) ===== -->
+    <header class="mobile-header">
+      <button
+        class="btn-icon"
+        id="mobileSidebarToggle"
+        aria-label="Toggle navigation"
+        title="Toggle navigation"
+      >☰</button>
+      <h2 class="mobile-header__title">OT&nbsp;CSM&nbsp;Buddy</h2>
+    </header>
+
+    <!-- ============ Sidebar ============ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__header">
+        <h2 class="text-logo">OT&nbsp;CSM&nbsp;Buddy</h2>
+        <button
+          class="btn-icon sidebar__toggle"
+          id="sidebarToggle"
+          aria-label="Toggle navigation"
+          title="Toggle navigation"
+        >
+          ☰
+        </button>
+      </div>
+
+      <nav class="sidebar__nav" id="navLinks">
+        <a href="#dashboard" class="nav-item" data-route="dashboard">
+          <span class="nav-item__icon" aria-hidden="true">🏠</span>
+          <span class="nav-item__label">Dashboard</span>
+        </a>
+        <a href="#tasks" class="nav-item" data-route="tasks">
+          <span class="nav-item__icon" aria-hidden="true">📋</span>
+          <span class="nav-item__label">Tasks</span>
+        </a>
+        <a href="#issues" class="nav-item" data-route="issues">
+          <span class="nav-item__icon" aria-hidden="true">⚠️</span>
+          <span class="nav-item__label">Major Issues</span>
+        </a>
+        <a href="#wins" class="nav-item" data-route="wins">
+          <span class="nav-item__icon" aria-hidden="true">🏆</span>
+          <span class="nav-item__label">Major Wins</span>
+        </a>
+        <a
+          href="#notifications"
+          class="nav-item"
+          data-route="notifications"
+          id="navNotifications"
+        >
+          <span class="nav-item__icon" aria-hidden="true">🔔</span>
+          <span class="nav-item__label">Notifications</span>
+          <span class="nav-item__badge hidden" id="notificationBadge"></span>
+        </a>
+
+<a href="#backup" class="nav-item" data-route="backup">
+  <span class="nav-item__icon" aria-hidden="true">💾</span>
+  <span class="nav-item__label">BackUp</span>
+</a>
+</nav>
+    </aside>
+
+    <!-- ============ Main content ============ -->
+    <main id="appMain" class="app-main">
+      <div id="view" class="main-content"></div>
+    </main>
+
+    <!-- Quick-add floating buttons (Dashboard only) -->
+    <div class="quick-add hidden" id="quickAddButtons">
+      <button class="quick-add__btn" data-type="task" aria-label="Quick-add Task">
+        <span>📝</span><span class="quick-add__label">Task</span>
+      </button>
+      <button class="quick-add__btn" data-type="issue" aria-label="Quick-add Major Issue">
+        <span>⚠️</span><span class="quick-add__label">Issue</span>
+      </button>
+      <button class="quick-add__btn" data-type="win" aria-label="Quick-add Major Win">
+        <span>🏆</span><span class="quick-add__label">Win</span>
+      </button>
+    </div>
+
+    <!-- Modal root (overlays inserted here by JS) -->
+    <div id="modalContainer"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
